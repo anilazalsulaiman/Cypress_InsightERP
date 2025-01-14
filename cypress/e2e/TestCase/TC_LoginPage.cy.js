@@ -8,7 +8,7 @@ describe('Login_Suite',()=>{
         })
     })
 
-    it('Valiadate dashboard after Login',()=>{ 
+    it('Validate dashboard after Login',()=>{ 
         LoginPage.login_url_assertion();     
     })
 })

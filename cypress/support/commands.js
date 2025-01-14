@@ -33,14 +33,11 @@ Cypress.Commands.add('loginfunctionality', (username, password) => {
     cy.get("input[placeholder='IN1234']").type(username)
     cy.get("input[type='password']").type(password)
     cy.get("button[type='submit']").click()
-    cy.wait(4000)
+    cy.wait(2000)
     cy.url().should('include', '/dashboard');
     //cy.xpath("//button[normalize-space()='View Profile']").should('have.text','View Profile')
   });
 
-  Cypress.Commands.overwrite('log', (subject, message) => {
-    // Suppress log outputs
-    return cy.wrap(subject);
-  });
+  
   
   
