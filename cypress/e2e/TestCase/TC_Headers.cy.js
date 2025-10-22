@@ -1,5 +1,4 @@
 import Headers from "../../Pages/ER_Headers.cy";
-import LoginPage from "../../Pages/ER_LoginPage.cy"
 
 describe('Login_Suite for QA All Access Account',()=>{
     beforeEach(function () {
@@ -17,7 +16,7 @@ describe('Login_Suite for QA All Access Account',()=>{
     })
 
     //APPS-GROUP CHANGE
-    it('Click header_Apps GROUP',()=> {
+    it.only('Click header_Apps GROUP',()=> {
         Headers.mousehover_header_apps();
         Headers.header_apps_click_groupchange(); 
     })
@@ -61,6 +60,22 @@ describe('Login_Suite for QA All Access Account',()=>{
         Headers.mousehover_header_apps();
         Headers.mousehover_header_apps_MyBills();  
         Headers.header_apps_bills_click_FinHistory(); 
+    })
+
+    //APPS-GOALS & REVIEWS
+    it('Hover_header_Apps visibility of GOALS & REVIEWS',()=> {
+        Headers.mousehover_header_apps();
+        Headers.header_apps_visible_GandR();   
+    })
+    it('Click header_Apps_g&r INITIATION',()=> {
+        Headers.mousehover_header_apps();
+        Headers.mousehover_header_apps_GandR();  
+        Headers.header_apps_GandR_click_Initiation(); 
+    })
+    it('Click header_Apps_g&r MY GOALS',()=> {
+        Headers.mousehover_header_apps();
+        Headers.mousehover_header_apps_GandR();  
+        Headers.header_apps_GandR_click_MyGoals(); 
     })
 
 })

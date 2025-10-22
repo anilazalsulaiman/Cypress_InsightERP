@@ -35,8 +35,18 @@ Cypress.Commands.add('loginfunctionality', (username, password) => {
     cy.get("button[type='submit']").click()
     cy.wait(2000)
     cy.url().should('include', '/dashboard');
-    //cy.xpath("//button[normalize-space()='View Profile']").should('have.text','View Profile')
   });
+
+// Hover over the Apps menu and click
+Cypress.Commands.add('mouseHoverAndClick',(element)=>{
+  cy.get(element).trigger('mouseover').click();
+})
+
+//XPATH
+// checks the element visibility for xpath
+Cypress.Commands.add('visibilityCheckXpath',(element)=>{
+  cy.xpath(element).should('be.visible')
+})
 
   
   
